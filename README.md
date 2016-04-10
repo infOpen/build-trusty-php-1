@@ -1,8 +1,12 @@
-# dockerfile-trusty-build-php
+# build-trusty-php-1
 
-[![Build Status](https://travis-ci.org/infOpen/dockerfile-trusty-build-php.svg?branch=master)](https://travis-ci.org/infOpen/dockerfile-trusty-build-php)
+[![Build Status](https://travis-ci.org/infOpen/build-trusty-php-1.svg?branch=master)](https://travis-ci.org/infOpen/build-trusty-php-1)
 
-Dockerfile used to build a base jenkins slave image used to build ubuntu packages for php apps
+Dockerfile used to build a base jenkins slave image used to build ubuntu trusty
+packages for php apps, with some dependencies :
+- mysql
+- nodejs
+- elasticsearch
 
 ## Warning
 
