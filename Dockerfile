@@ -44,9 +44,16 @@ RUN apt-get update && \
                         php5-xdebug \
                         php5-xsl \
                         graphviz \
-                        libgv-php5
+                        libgv-php5 \
+                        xvfb
 
 # Download and install composer
 RUN curl -sS https://getcomposer.org/installer | \
     php -- --install-dir=/usr/local/bin --filename=composer
 
+# Manage headless chromium browser
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    dpkg --unpack google-chrome-stable_current_amd64.deb && \
+    apt-get install -f -y && \
+    apt-get clean && \
+    rm google-chrome-stable_current_amd64.deb
