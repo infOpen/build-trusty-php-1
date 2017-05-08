@@ -49,14 +49,14 @@ RUN apt-get update && \
                         php7.0-mysql \
                         php7.0-opcache \
                         php7.0-readline \
+                        php7.0-xdebug \
                         php7.0-xml \
                         php7.1-common \
                         php7.1-mbstring \
                         libapache2-mod-php7.0 \
                         graphviz \
                         xvfb
-# Install PHP xdebug extension
-RUN sudo pecl install xdebug
+
 # Download and install composer
 RUN curl -sS https://getcomposer.org/installer | \
     php -- --install-dir=/usr/local/bin --filename=composer
