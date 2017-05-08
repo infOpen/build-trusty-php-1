@@ -25,6 +25,10 @@ RUN echo "deb https://deb.nodesource.com/node_5.x trusty main" \
 RUN echo "deb-src https://deb.nodesource.com/node_5.x trusty main" \
     | sudo tee -a /etc/apt/sources.list.d/nodejs-5.x-src.list
 
+# Install additionnal repository for PHP
+RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu trusty main" \
+    | sudo tee -a /etc/apt/sources.list.d/ondrej-php-trusty.list
+
 # Install packages to manage php jobs, includes Mysql server and ElasticSearch
 RUN apt-get update && \
     apt-get install -y  elasticsearch \
@@ -33,18 +37,21 @@ RUN apt-get update && \
                         openjdk-7-jdk \
                         openjdk-7-jre \
                         php-pear \
-                        php5 \
-                        php5-cli \
-                        php5-common \
-                        php5-curl \
-                        php5-gd \
-                        php5-imagick \
-                        php5-mcrypt \
-                        php5-mysql \
-                        php5-xdebug \
-                        php5-xsl \
+                        php7.0 \
+                        php7.0-cli \
+                        php7.0-common \
+                        php7.0-curl \
+                        php7.0-gd \
+                        php7.0-json \
+                        php7.0-mbstring \
+                        php7.0-mysql \
+                        php7.0-opcache \
+                        php7.0-readline \
+                        php7.0-xml \
+                        php7.1-common \
+                        php7.1-mbstring \
+                        libapache2-mod-php7.0 \
                         graphviz \
-                        libgv-php5 \
                         xvfb
 
 # Download and install composer
