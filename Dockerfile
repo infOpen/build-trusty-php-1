@@ -26,8 +26,7 @@ RUN echo "deb-src https://deb.nodesource.com/node_5.x trusty main" \
     | sudo tee -a /etc/apt/sources.list.d/nodejs-5.x-src.list
 
 # Install additionnal repository for PHP
-RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu trusty main" \
-    | sudo tee -a /etc/apt/sources.list.d/ondrej-php-trusty.list
+RUN sudo add-apt-repository ppa:ondrej/php
 
 # Install packages to manage php jobs, includes Mysql server and ElasticSearch
 RUN apt-get update && \
