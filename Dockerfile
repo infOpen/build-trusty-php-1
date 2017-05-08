@@ -54,7 +54,8 @@ RUN apt-get update && \
                         libapache2-mod-php7.0 \
                         graphviz \
                         xvfb
-
+# Install PHP xdebug extension
+RUN sudo pecl install xdebug
 # Download and install composer
 RUN curl -sS https://getcomposer.org/installer | \
     php -- --install-dir=/usr/local/bin --filename=composer
